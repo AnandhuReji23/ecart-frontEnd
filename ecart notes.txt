@@ -1,0 +1,96 @@
+                                             E-Cart Frontend
+
+
+1)create a folder e Cart
+
+2)inside the folder create Frontend ng new e-cart-frontend
+
+3)open in vs code
+
+4)run angular
+
+5)ng s--o
+
+6)clear code in app.com.html
+
+7)import 3rd party library
+
+   -bootstrap
+   -g font
+   -fontawesome
+
+8)LAZZY Loading
+
+   -Lazy loading helps keeps initial bundle size smaller
+   which in turn helps decrease load times.
+   -it is an approach to limit the modules thats are loaded to the ones that the user currently needs this can i,prove your application performance and reduce the initial bundle size.
+
+   -w have  one module in our application =app.module
+
+   here we can create another module
+   --generate module= ng g m products --route products --module app.module
+
+9)component generation
+
+    ng g c products/allProducts
+    ng g c products/viewProducts
+    ng g c products/wishlist   
+    ng g c products/cart
+
+    not in Lazzy loading
+
+    ng g c header
+    ng g c footer
+    ng g c pageNoteFound
+
+
+   
+
+10) install some libraries - npm i express cors mongoose dotenv
+
+=>dotenv - Environment variables are used to store app secret and configuration data which are retrieved by the running app when needed. Types
+
+=> 1. System Environment variables (s/m path)
+
+=> 2. User environment variables (Admin)
+
+=> 3. Runtime/Process variables (Application running process)
+
+Create .env file
+
+Create .gitignore file
+
+Add node_modules and .env in .gitignore
+
+
+11)Api integration
+
+->import HttpClientModule in app.module.ts
+
+->Create a services inside product module - for APICalling
+
+     -ng g s products/services/api
+
+->Inside api.services file,
+
+    -create and use http dependency injection
+
+    -also create a function for (getALLproducts()) fetching all products details
+
+->Inside all-products.component file ,
+
+    -create and use api dependency injection
+
+    -also create a function for integrating api service
+
+    -get all products details
+
+->Wishlist functionality is compileFunction and
+
+    ->product search
+    -ng g p products/pipes/filter
+
+    -behavior subject
+       If the data is confined to a single component there is (almost) no need for observables. If the data needs to be shared among multiple components however, it is stored in singleton services. And components have no way of knowing the state of data in the service. So observables are used to tell the components the state of the data has been changed.
+
+->cart functionality
